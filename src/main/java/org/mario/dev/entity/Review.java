@@ -1,18 +1,29 @@
 package org.mario.dev.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString(callSuper = true)
 @Entity
-@Table(name = "review")
+@Table(name = "reviews")
 public class Review extends AbstractEntity{
+    @NotNull
+    @Column(name = "title", nullable = false)
+    private String title;
+
+    @NotNull
+    @Column(name = "description", nullable = false)
+    private String description;
+
+    @NotNull
+    @Column(name = "rating", nullable = false)
+    private Long rating;
 }

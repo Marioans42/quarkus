@@ -1,5 +1,5 @@
 package org.mario.dev.entity.enums;
 
 public enum OrderStatus {
-    NEW, CANCELED, CONFIRMED
+    NEW, CANCELED, PAID, CREATION
 }
